@@ -34,10 +34,11 @@
 # Build Folder
 /build/
 /include/boost
-/lib/
+/lib/libboost*
+/lib/cmake
 /boost_1_75_0/b2
 /boost_1_75_0/bin.v2/
-/boost_1_75_0/project-config.jam
+/boost_1_75_0/project-config.jam*
 /boost_1_75_0/stage/
 /boost_1_75_0/tools/build/src/engine/b2
 /boost_1_75_0/tools/build/src/engine/bjam
