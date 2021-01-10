@@ -42,3 +42,7 @@
 /boost_1_75_0/stage/
 /boost_1_75_0/tools/build/src/engine/b2
 /boost_1_75_0/tools/build/src/engine/bjam
+
+# Config
+/.vscode/
+/.vs/
