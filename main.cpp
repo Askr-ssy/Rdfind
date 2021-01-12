@@ -6,11 +6,15 @@
 #include<file.hpp>
 
 int main(int argc,char *argv[]){
-    for(int i=0;i<sizeof(argv);++i)
+    assert(boost::filesystem::exists(argv[1]));
+
+    boost::filesystem::path root_path{argv[1]};
+
+    for (auto &_path :boost::filesystem::recursive_directory_iterator(root_path))
     {
-        std::cout<<"args is "<<argv[i]<<std::endl;
+        std::cout<<"_file is "<<boost::filesystem::absolute(_path.path())<<std::endl;
     }
-    std::cout<<argc<<std::endl<<*argv<<std::endl;
+    std::cout<< "root path is "<<root_path<<std::endl;
     std::cout<<"filesize is "<< boost::filesystem::file_size(argv[0])<<std::endl;
     std::cout<<"done"<<std::endl;
     return 0;
