@@ -6,6 +6,8 @@
 *.lo
 *.o
 *.obj
+*.rsp
+*.cs
 
 # Precompiled Headers
 *.gch
@@ -32,6 +34,8 @@
 *.app
 
 # Build Folder
+*.cache
+/out/
 /build/
 /include/boost
 /lib/libboost*
