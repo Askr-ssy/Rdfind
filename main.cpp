@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
     else
     {
       askr::hash phash;
-      phash.get_md5hash(_path.path().native());
 
       std::cout << "file is " << _path.path() << std::endl;
+      std::cout<<"md5 is " << phash.get_md5hash(_path.path().native())<<std::endl;
 
       std::cout << "_filesize is " << boost::filesystem::file_size(_path.path()) << std::endl;
     }
