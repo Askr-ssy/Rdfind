@@ -17,12 +17,15 @@ ELSEIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
         execute_process(COMMAND b2.exe install --prefix=${CMAKE_CURRENT_SOURCE_DIR} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/boost_1_75_0)
     endif()
 ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
-MESSAGE(STATUS "build filesystem")
+MESSAGE(STATUS "boost done")
 
 
 set (CMAKE_CXX_STANDARD 11)
-# use boost.filesystem
+
 include_directories(Rdfind include)
 link_directories(lib)
+
+add_subdirectory(. include)
 add_executable(rdfind main.cpp)
+
 target_link_libraries(rdfind boost_filesystem)
