@@ -25,7 +25,10 @@ set (CMAKE_CXX_STANDARD 11)
 include_directories(Rdfind include)
 link_directories(lib)
 
-add_subdirectory(. include)
+add_subdirectory(include)
 add_executable(rdfind main.cpp)
 
 target_link_libraries(rdfind boost_filesystem)
+target_link_libraries(rdfind hash)
+target_link_libraries(rdfind ssl)
+target_link_libraries(rdfind crypto)
