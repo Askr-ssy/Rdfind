@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 namespace askr
-{
+{   
     class find : public boost::filesystem::path
     {
     public:
