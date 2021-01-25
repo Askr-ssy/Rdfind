@@ -3,7 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
-#include<filesystem>
+#include <filesystem>
 #include <cassert>
 
 #include "find.hpp"
@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
   askr::find find{argv[1]};
   std::cout << "root path is " << find.c_str() << std::endl;
   find.init();
-  for(auto &var : find.summary)
+  for (auto &var : find.summary)
   {
-    std::cout<<var.second <<" "<<var.first<<std::endl; 
+    std::cout << var.second << " " << var.first << std::endl;
   }
 
   std::cout << "done" << std::endl;
