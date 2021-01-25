@@ -3,14 +3,15 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
-#include <boost/filesystem.hpp>
+#include<filesystem>
+#include <cassert>
 
-#include <find.hpp>
+#include "find.hpp"
 #include "md5.hpp"
 
 int main(int argc, char *argv[])
 {
-  assert(boost::filesystem::is_directory(argv[1]) && "the path is not directory");
+  assert(std::filesystem::is_directory(argv[1]) && "the path is not directory");
 
   askr::find find{argv[1]};
   std::cout << "root path is " << find.c_str() << std::endl;

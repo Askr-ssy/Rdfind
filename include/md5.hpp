@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <fstream>
 #include <iostream>
-#include "boost/filesystem.hpp"
+#include <filesystem>
 #define BUFFSIZE 65535
 
 namespace askr

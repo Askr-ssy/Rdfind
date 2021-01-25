@@ -1,4 +1,4 @@
-#include <boost/filesystem.hpp>
+#include<filesystem>
 #include <string>
 #include <iostream>
 #include<unordered_map>
@@ -6,15 +6,15 @@
 #include "md5.hpp"
 namespace askr
 {   
-    class find : public boost::filesystem::path
+    class find : public std::filesystem::path
     {
     public:
         // find();
-        find(const std::basic_string<value_type> &s):boost::filesystem::path(s){};
+        find(const std::basic_string<value_type> &s):std::filesystem::path(s){};
 
         bool init(){
-            for (auto &_path : boost::filesystem::recursive_directory_iterator(this->native())){
-                if (boost::filesystem::is_directory(_path))
+            for (auto &_path : std::filesystem::recursive_directory_iterator(this->native())){
+                if (std::filesystem::is_directory(_path))
                     continue;
                 else {
                     askr::hash phash;
@@ -22,6 +22,7 @@ namespace askr
                     summary[_path.path().native()] = phash.get_md5hash(_path.path().native());
                 }
             }
+            return true;
         }
     public:
         std::map<std::string,std::string> summary;
